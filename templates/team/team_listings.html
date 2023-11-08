@@ -1,0 +1,65 @@
+{% extends '../base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+
+{% block content %} 
+
+<!-- Page Header Start !-->
+<div class="page-breadcrumb-sec page-bg style-two" style="background-image: url({% static 'images/covers/bristol-hotel-kaduna3.jpg' %});
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;">
+    <div class="page-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-wrapper style-two">
+                    <div class="breadcrumb-list">
+                        <ul>
+                            <li><a href="{% url 'index' %}">Home</a></li>
+                            <li class="active"><a href="#">Team Member</a></li>
+                        </ul>
+                    </div>
+                    <div class="page-heading">
+                        <h1>Management</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End !-->
+<!-- Team Page Start !-->
+<div class="team-page-area bg-white">
+    <div class="container">
+        <div class="row">
+             {% for team in team_list %}
+            <!-- single protfolio start -->
+            <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="team-member style-two">
+                    <div class="image">
+                        <img src="{{team.picture.url}}" alt="team one" />
+                    </div>
+                    <div class="content-wrapper">
+                        <div class="content">
+                            <h3 class="name">{{team.name}}</h3>
+                            <span class="designation">{{team.title}}</span>
+                            <span class="designation">{{team.designation}}</span>
+                        </div>
+                         <div class="text-center">
+                            <a href="{% url 'team_detail' team.pk%}">Read More <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <!-- single protfolio end -->
+            
+        </div>
+    </div>
+</div>
+<!-- Team Page End !-->
+           
+{% endblock content %} 

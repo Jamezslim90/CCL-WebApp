@@ -1,0 +1,65 @@
+{% extends '../base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+
+{% block content %} 
+
+<!-- Page Header Start !-->
+<div class="page-breadcrumb-sec page-bg style-two" style="background-image: url({% static 'images/covers/workers.png' %});
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;">
+    <div class="page-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-wrapper style-two">
+                    <div class="breadcrumb-list">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li class="active"><a href="#">project list</a></li>
+                        </ul>
+                    </div>
+                    <div class="page-heading">
+                        <h1>Projects</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End !-->
+
+<div class="portfolio-area">
+    <div class="container">
+        <div class="row">
+          {% for project in project_list %}
+            <!-- single protfolio start -->
+            <div class="col-lg-4 col-md-6">
+                <div class="portfolio-style-one">
+                    <div class="image">
+                        <img src="{{project.featured_image.url }}" alt="gallery" />
+                    </div>
+                    <div class="content-wrapper">
+                        <div class="title-img">
+                            {% comment %} <img src="images/gallery-logo.png" alt="gallery" /> {% endcomment %}
+                            <span class="">{{project.name}} </span>
+                        </div>
+                        <p class="desc">{{project.location}} </p>
+                        <div class="read-more">
+                            <a href="{% url 'project_detail' project.pk %}">View More <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- single protfolio end -->
+           {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+

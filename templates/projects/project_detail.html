@@ -1,0 +1,150 @@
+{% extends '../base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+
+{% block content %} 
+
+<!-- Page Header Start !-->
+<div class="page-breadcrumb-sec page-bg style-two" style="
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover; height:320px;">
+    <div class="page-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-wrapper style-two">
+                    <div class="breadcrumb-list">
+                        <ul>
+                            <li><a href="{% url 'index' %}">Home</a></li>
+                            <li class="active"><a href="#">project details</a></li>
+                        </ul>
+                    </div>
+                    <div class="page-heading">
+                        <h1>{{project.category}} Project</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End !-->
+
+<!-- Service Details Area Start -->
+<div class="service-details-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4 order-2 order-xl-1">
+                <!-- sidebar start -->
+                <div class="service-sidebar">
+                   
+                    <div class="widget contact-info style-two">
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fa-light fa-location-dot"></i>
+                            </div>
+                            <div class="contact">
+                                <span>Location:</span>
+                                <p>{{project.location}}</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fa-thin fa-envelope"></i>
+                            </div>
+                            <div class="contact">
+                                <span>Client:</span>
+                                <p>{{project.client}}</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fa-light fa-clock"></i>
+                            </div>
+                            <div class="contact">
+                                <span>Stage:</span>
+                                <p>{{project.status}}</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fa-light fa-house"></i>
+                            </div>
+                            <div class="contact">
+                                <span>Category:</span>
+                                <p>{{project.category}}</p>
+                            </div>
+                        </div>
+                        {% comment %} <div class="d-flex justify-content-center w-100">
+                            <a href="#" class="theme-btn w-100 justify-content-center home-btn-two background-orange">Find Our Location</a>
+                        </div> {% endcomment %}
+                    </div>
+                    <!-- service-promotion start -->
+                    <div class="widget widget_service_brochure">
+                        <div class="widget-title-box">
+                            <h4 class="wp-block-heading">Company Profile</h4>
+                        </div>
+                        <div class="button-wrapper">
+                            <a href="#" class="pdf btn-text">Download PDF</a>
+                          
+                        </div>
+                    </div>
+                    <!-- service-promotion end -->
+                </div>
+                <!-- sidebar end -->
+            </div>
+            <div class="col-xl-8 order-1 service-details-wrapper">
+                <div class="details-content">
+                    <div class="feature-image">
+                        <img src="{{project.featured_image.url}}" alt="project-details"/>
+                    </div>
+                    <div class="text">
+                        <h3>{{project.name}}</h3>
+                        <p>{{project.description}}</p>
+                       
+                    </div>
+                </div>
+                <div class="key-featured-area">
+                    <div class="key-feature-wrapper">
+                     <div class="text">
+                        <h3>Facilities</h3>
+                    </div>
+                        <div class="single-key-featured">
+                            <ul>
+                            {% for facility in project.facilities.all %}
+                                <li>
+                                    <span class="icon"> <i class="bi bi-check2" style="color: #4566d4"></i></i></span>
+                                    <span class="title">{{facility}}</span>
+                                </li>
+                             {% endfor%}
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+               
+                <div class="related-service">
+                    <h4 class="title">Project Pictures</h4>
+                   
+                    <div class="relate-service-slider">
+                     {% for photo in project.projphoto.all %}
+                        <div class="single-slick-item">
+                            <div class="portfolio-style-one">
+                                <div class="image">
+                                    <img src="{{photo.image.url}}" alt="gallery">
+                                </div>
+                            </div>
+                        </div>
+                     {%endfor%}
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Service Details Area End -->
+{% endblock content %} 
+ 

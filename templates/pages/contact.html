@@ -1,0 +1,131 @@
+{% extends '../base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+
+{% block content %}
+
+      <!-- Page Header Start !-->
+<div class="page-breadcrumb-sec page-bg style-two" style="background-image: url({% static 'images/covers/bristol-hotel-kaduna3.jpg' %});
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;">
+    <div class="page-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-wrapper style-two">
+                    <div class="breadcrumb-list">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li class="active"><a href="#">about us</a></li>
+                        </ul>
+                    </div>
+                    <div class="page-heading">
+                        <h1>Contact us</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End !-->
+<!-- Contact Info Start !-->
+<div class="contact-info-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-lg-4">
+                <div class="info-card">
+                    <div class="icon">
+                        <i class="fa-light fa-location-dot"></i>
+                    </div>
+                    <div class="content">
+                        <h3 class="title">Address</h3>
+                        <p class="text"> Suite A001 Crowther Plaza Plot 1055 Joseph Gomwalk Street, Gudu District.<br/> FCT Abuja
+Nigeria</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+                <div class="info-card">
+                    <div class="icon">
+                        <i class="fa-light fa-envelope"></i>
+                    </div>
+                    <div class="content">
+                        <h3 class="title">Email</h3>
+                        <p class="text">centralcontractorslimited@gmail.com <br/> support@ccl.com <br/> info@ccl.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+                <div class="info-card">
+                    <div class="icon">
+                        <i class="fa-regular fa-phone"></i>
+                    </div>
+                    <div class="content">
+                        <h3 class="title">Phone</h3>
+                        <p class="text"> +234 (0) 8037116721,<br/> (234) 08071803066 <br/>+234 (0) 8037116721,</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact Info End !-->
+<!-- Contact Form Start !-->
+<div class="contact-form-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="post-comments-form">
+                    <div class="comment-respond">
+                        <div class="post-comments-title">
+                            <h2>Get In Touch</h2>
+                        </div>
+                        <form action="#" class="comment-form">
+                            <div class="row">
+                                <div class="col-xl-4">
+                                    <div class="single-input-field">
+                                        <input name="name" type="text" placeholder="Your Name" />
+                                    </div>
+                                </div>
+                                <div class="col-xl-8">
+                                    <div class="single-input-field">
+                                        <input name="email" type="email" placeholder="Your Email" />
+                                    </div>
+                                </div>
+                                <div class="col-xl-4">
+                                    <div class="single-input-field">
+                                        <input name="number" type="number" placeholder="Your Phone" />
+                                    </div>
+                                </div>
+                                <div class="col-xl-8">
+                                    <div class="single-input-field">
+                                        <input name="website" type="text" placeholder="Website" />
+                                    </div>
+                                </div>
+                                <div class="col-xl-12">
+                                    <div class="contacts-message">
+                                    <textarea name="comment" cols="20" rows="3" placeholder="Let us know what you need"></textarea>
+                                        <button class="theme-btn" type="submit">Send Message</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact Form End !-->
+<!-- Map Start -->
+<div class="contact-map-area">
+    <div class="map-widget">
+        <div style="max-width:100%;overflow:hidden;color:red;width:1300px;height:500px;"><div id="google-maps-display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Crowther+Plaza,+Joseph+Gomwalk+Street,+Abuja,+Nigeria&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="google-maps-html" rel="nofollow" href="https://www.bootstrapskins.com/themes" id="inject-map-data">premium bootstrap themes</a><style>#google-maps-display .text-marker{}.map-generator{max-width: 100%; max-height: 100%; background: none;</style></div>
+    </div>
+</div>
+<!-- Map End -->
+
+{% endblock content %}

@@ -1,0 +1,110 @@
+{% extends '../base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+
+{% block content %} 
+
+<!-- Page Header Start !-->
+<div class="page-breadcrumb-sec page-bg" data-speed="0.2" style="">
+    <div class="page-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-wrapper">
+                    <div class="breadcrumb-list">
+                        <ul>
+                            <li class="active"><a href="{% url 'team' %}">Team</a></li>
+                        </ul>
+                    </div>
+                    <div class="page-heading">
+                        <h1>{{ team.name}}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End !-->
+
+
+<div class="blog-details-area sec-bg-gray pt-100 pb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 order-2 order-lg-1 blog-details-wrapper">
+               
+                <!-- Post Author Start -->
+                <div class="author mt-0 mb-40">
+                    <div class="author-img">
+                        <a href="#">
+                            <img alt="" src="{{team.picture.url}}" class="avatar avatar-190 photo media-object" height="190" width="190">
+                        </a>
+                    </div>
+                    
+                    <div class="text">
+                        {% for para in team.teamText.all %}
+                                <p >{{para.paragraph}}</p><br>
+                        {% endfor%}
+                    </div>
+                </div>
+                <!-- Post Author End -->
+               
+                <!-- Post Details End -->
+            </div>
+            <!-- Blog Sidebar Start -->
+            <div class="col-lg-4 order-1 order-lg-2">
+                <div class="sidebar">
+                    <div class="widget widget_search">
+                        <div class="widget-title-box">
+                            <h4 class="wp-block-heading">Summary</h4>
+                        </div>
+                       <p>
+                       <span class="icon"> <i class="bi bi-check2" style="color:#4566d4"></i></i></span>
+                        <span class="title">{{team.designation}} MACRO ACRES LTD</span>
+                        </p>
+
+                         <p>
+                       <span class="icon"> <i class="bi bi-check2" style="color:#4566d4"></i></i></span>
+                        <span class="title">Over {{team.yrs_of_experience}} years Experience</span>
+                        </p>
+
+                         <p>
+                       <span class="icon"> <i class="bi bi-check2" style="color:#4566d4"></i></i></span>
+                        <span class="title">Phone: +(234) {{team.phone_number}}</span>
+                        </p>
+                    </div>
+                    
+                     
+                    <div class="widget widget_social_profile">
+                        <div class="widget-title-box">
+
+                            <h4 class="wp-block-heading">Social</h4>
+                        </div>
+
+                        <div class="social-widget">
+                        <a href="{{team.facebook}}"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="{{team.twitter}}"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="{{team.instagram}}"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="{{team.linkedin}}"><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="widget widget_promotion">
+                        <div class="widget-title-box">
+                            <h4 class="wp-block-heading">Work Together</h4>
+                        </div>
+                        <div class="promotion-card">
+                            <p>It is a long established fact that a reader will be distracted by the readable  versions of Lorem Ipsum. </p>
+                            <a href="#" class="secondary-btn">Contact us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Blog Sidebar Start -->
+        </div>
+    </div>
+</div>
+
+{% endblock content %} 
