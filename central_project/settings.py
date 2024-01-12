@@ -15,7 +15,9 @@ SECRET_KEY = 'django-insecure-pis0j&rsl*2h*--199!)mjdm-lclp0^#8b4=6+7bv=w-$4(=b^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+# ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["*", ".vercel.app", ".now.sh"]
+
 
 
 # Application definition
@@ -34,7 +36,9 @@ INSTALLED_APPS = [
     'team',
     'products',
     'easy_thumbnails',
-    'django_s3_storage'
+    'django_s3_storage',
+     "django_minify_html"
+
 ]
 
 MIDDLEWARE = [
@@ -44,7 +48,8 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',,
+    "django_minify_html.middleware.MinifyHtmlMiddleware",
 ]
 
 ROOT_URLCONF = 'central_project.urls'
@@ -129,7 +134,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 MEDIA_URL = '/media/' # new
