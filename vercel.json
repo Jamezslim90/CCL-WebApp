@@ -23,13 +23,7 @@
         "src": "/(.*)",
         "dest": "central_project/wsgi.py"
       }
-    ],
-
-    "functions": {
-        "api/**/*.py": {
-          "excludeFiles": "{.venv,*.cache,node_modules,venv,*.db,*.sqlite3}/**"
-        }
-      }
+    ]
 
 }
 
