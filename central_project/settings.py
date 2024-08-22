@@ -1,6 +1,7 @@
 
 from pathlib import Path
 import os
+import helpers.cloudflare.settings
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,28 +24,25 @@ ALLOWED_HOSTS = ["*", "localhost", "0.0.0.0", "127.0.0.1", "ccl-6v3u.onrender.co
 # Application definition
 
 INSTALLED_APPS = [
-    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     'pages.apps.PagesConfig',
     'projects',
     'team',
     'products',
-    'easy_thumbnails',
-    'django_s3_storage',
-     "django_minify_html"
+    "django_minify_html"
 
 ]
 
 MIDDLEWARE = [
-    
+
     'django.middleware.security.SecurityMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    #"whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -75,17 +73,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'central_project.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 
 
@@ -138,14 +125,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
-
-STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
-
-WHITENOISE_MANIFEST_STRICT = False
-
-MEDIA_URL = '/media/' # new
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # new
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 
 # Default primary key field type
@@ -153,33 +133,43 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # new
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-JAZZMIN_SETTINGS = {
-
-        "site_title": "Central Contractors Ltd",
-        "site_header": "Central Contractors Ltd",
-        "site_brand": "CCL Admin",
-        # "site_logo": "img/logo/ma-logo.png",
-        # "login_logo": "img/logo/ma-logo.png",
-        "site_icon": "img/logo/ma-logo.png",
-        # Welcome text on the login screen
-        "welcome_sign": "Welcome to Central Contractors Admin",
-
-        # Copyright on the footer
-        "copyright": "Central Contractors Ltd",
-
-        # The model admin to search from the search bar, search bar omitted if excluded
-        "search_model": "auth.User",
+STORAGES = {
+    "default": {
+        "BACKEND": "helpers.cloudflare.storages.MediaFileStorage",
+        "OPTIONS": helpers.cloudflare.settings.CLOUDFLARE_R2_CONFIG_OPTIONS,
+    },
+    "staticfiles": {
+        "BACKEND": "helpers.cloudflare.storages.StaticFileStorage",
+        "OPTIONS": helpers.cloudflare.settings.CLOUDFLARE_R2_CONFIG_OPTIONS,
+    },
 }
 
+# JAZZMIN_SETTINGS = {
 
-# UserUpload images Settings
+#         "site_title": "Central Contractors Ltd",
+#         "site_header": "Central Contractors Ltd",
+#         "site_brand": "CCL Admin",
+#         # "site_logo": "img/logo/ma-logo.png",
+#         # "login_logo": "img/logo/ma-logo.png",
+#         "site_icon": "img/logo/ma-logo.png",
+#         # Welcome text on the login screen
+#         "welcome_sign": "Welcome to Central Contractors Admin",
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+#         # Copyright on the footer
+#         "copyright": "Central Contractors Ltd",
 
-AWS_ACCESS_KEY_ID = 'AKIA5WSB2IR7BNA3LW7X'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'django-cat-bucket'
-AWS_QUERYSTRING_AUTH = False
-AWS_SECURITY_TOKEN_IGNORE_ENVIRONMENT = True
-AWS_IGNORE_ENVIRONMENT_CREDENTIALS = True
+#         # The model admin to search from the search bar, search bar omitted if excluded
+#         "search_model": "auth.User",
+# }
+
+
+# # UserUpload images Settings
+
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+# AWS_ACCESS_KEY_ID = 'AKIA5WSB2IR7BNA3LW7X'
+# AWS_SECRET_ACCESS_KEY = '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'
+# AWS_STORAGE_BUCKET_NAME = 'django-cat-bucket'
+# AWS_QUERYSTRING_AUTH = False
+# AWS_SECURITY_TOKEN_IGNORE_ENVIRONMENT = True
+# AWS_IGNORE_ENVIRONMENT_CREDENTIALS = True
