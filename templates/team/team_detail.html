@@ -4,7 +4,7 @@
 {% block title %}Home{% endblock title %}
 
 
-{% block content %} 
+{% block content %}
 
 <!-- Page Header Start !-->
 <div class="page-breadcrumb-sec page-bg" data-speed="0.2" style="">
@@ -33,7 +33,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 order-2 order-lg-1 blog-details-wrapper">
-               
+
                 <!-- Post Author Start -->
                 <div class="author mt-0 mb-40">
                     <div class="author-img">
@@ -41,7 +41,7 @@
                             <img alt="" src="{{team.picture.url}}" class="avatar avatar-190 photo media-object" height="190" width="190">
                         </a>
                     </div>
-                    
+
                     <div class="text">
                         {% for para in team.teamText.all %}
                                 <p >{{para.paragraph}}</p><br>
@@ -49,7 +49,7 @@
                     </div>
                 </div>
                 <!-- Post Author End -->
-               
+
                 <!-- Post Details End -->
             </div>
             <!-- Blog Sidebar Start -->
@@ -74,8 +74,8 @@
                         <span class="title">Phone: +(234) {{team.phone_number}}</span>
                         </p>
                     </div>
-                    
-                     
+
+
                     <div class="widget widget_social_profile">
                         <div class="widget-title-box">
 
@@ -83,14 +83,14 @@
                         </div>
 
                         <div class="social-widget">
-                        <a href="{{team.facebook}}"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="{{team.twitter}}"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="{{team.instagram}}"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="{{team.linkedin}}"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="{{team.facebook}}"><i class="fa-brands bi bi-facebook-f"></i></a>
+                        <a href="{{team.twitter}}"><i class="fa-brands bi bi-twitter"></i></a>
+                        <a href="{{team.instagram}}"><i class="fa-brands bi bi-instagram"></i></a>
+                        <a href="{{team.linkedin}}"><i class="fa-brands bi bi-linkedin"></i></a>
                         </div>
-                        
+
                     </div>
-                    
+
                     <div class="widget widget_promotion">
                         <div class="widget-title-box">
                             <h4 class="wp-block-heading">Work Together</h4>
@@ -107,4 +107,4 @@
     </div>
 </div>
 
-{% endblock content %} 
+{% endblock content %}

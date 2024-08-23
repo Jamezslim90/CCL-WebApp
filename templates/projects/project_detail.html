@@ -4,7 +4,7 @@
 {% block title %}Home{% endblock title %}
 
 
-{% block content %} 
+{% block content %}
 
 <!-- Page Header Start !-->
 <div class="page-breadcrumb-sec page-bg style-two" style="
@@ -39,11 +39,11 @@
             <div class="col-xl-4 order-2 order-xl-1">
                 <!-- sidebar start -->
                 <div class="service-sidebar">
-                   
+
                     <div class="widget contact-info style-two">
                         <div class="contact-info-item">
                             <div class="contact-icon">
-                                <i class="fa-light fa-location-dot"></i>
+                                <i class="fa-light bi bi-geo-alt"></i>
                             </div>
                             <div class="contact">
                                 <span>Location:</span>
@@ -52,7 +52,7 @@
                         </div>
                         <div class="contact-info-item">
                             <div class="contact-icon">
-                                <i class="fa-thin fa-envelope"></i>
+                                <i class="fa-thin bi bi-envelope"></i>
                             </div>
                             <div class="contact">
                                 <span>Client:</span>
@@ -61,7 +61,7 @@
                         </div>
                         <div class="contact-info-item">
                             <div class="contact-icon">
-                                <i class="fa-light fa-clock"></i>
+                                <i class="fa-light bi bi-clock"></i>
                             </div>
                             <div class="contact">
                                 <span>Stage:</span>
@@ -70,7 +70,7 @@
                         </div>
                         <div class="contact-info-item">
                             <div class="contact-icon">
-                                <i class="fa-light fa-house"></i>
+                                <i class="fa-light bi bi-building"></i>
                             </div>
                             <div class="contact">
                                 <span>Category:</span>
@@ -88,7 +88,7 @@
                         </div>
                         <div class="button-wrapper">
                             <a href="#" class="pdf btn-text">Download PDF</a>
-                          
+
                         </div>
                     </div>
                     <!-- service-promotion end -->
@@ -103,7 +103,7 @@
                     <div class="text">
                         <h3>{{project.name}}</h3>
                         <p>{{project.description}}</p>
-                       
+
                     </div>
                 </div>
                 <div class="key-featured-area">
@@ -121,13 +121,13 @@
                              {% endfor%}
                             </ul>
                         </div>
-                        
+
                     </div>
                 </div>
-               
+
                 <div class="related-service">
                     <h4 class="title">Project Pictures</h4>
-                   
+
                     <div class="relate-service-slider">
                      {% for photo in project.projphoto.all %}
                         <div class="single-slick-item">
@@ -139,12 +139,11 @@
                         </div>
                      {%endfor%}
                     </div>
-                    
+
                 </div>
             </div>
         </div>
     </div>
 </div>
 <!-- Service Details Area End -->
-{% endblock content %} 
- 
+{% endblock content %}
