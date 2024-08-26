@@ -4,7 +4,7 @@
 {% block title %}Home{% endblock title %}
 
 
-{% block content %} 
+{% block content %}
 
 <!-- Page Header Start !-->
 <div class="page-breadcrumb-sec page-bg style-two" style="background-image: url({% static 'images/covers/workers.png' %});
@@ -18,7 +18,7 @@
                 <div class="breadcrumb-wrapper style-two">
                     <div class="breadcrumb-list">
                         <ul>
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="{% url 'index' %}">Home</a></li>
                             <li class="active"><a href="#">project list</a></li>
                         </ul>
                     </div>
@@ -49,7 +49,7 @@
                         </div>
                         <p class="desc">{{project.location}} </p>
                         <div class="read-more">
-                            <a href="{% url 'project_detail' project.pk %}">View More <i class="fa fa-arrow-right"></i></a>
+                            <a href="{% url 'project_detail' project.pk %}">View More <i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
