@@ -36,7 +36,8 @@ INSTALLED_APPS = [
     'projects',
     'team',
     'products',
-    "django_minify_html"
+    "django_minify_html",
+     'django_crontab',
 
 ]
 
@@ -146,6 +147,10 @@ STORAGES = {
         "OPTIONS": helpers.cloudflare.settings.CLOUDFLARE_R2_CONFIG_OPTIONS,
     },
 }
+API_URL = "https://ccl-6v3u.onrender.com"
+CRONJOBS = [
+    ('*/5 * * * *', 'projects.cron.my_scheduled_job', '>> /cron/django_cron.log 2>&1')
+]
 
 # JAZZMIN_SETTINGS = {
 
