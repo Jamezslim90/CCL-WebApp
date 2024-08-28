@@ -426,7 +426,7 @@
                     Building with a conscious effort to minimize environmental impact and promote eco-friendly practices.
                   </p>
                   <div class="read-more">
-                    <a href="{% url 'about'%}">Learn More <i class="bi bi-arrow-right"></i></a>
+                    <a href="{% url 'about' %}">Learn More <i class="bi bi-arrow-right"></i></a>
                   </div>
                 </div>
               </div>
@@ -441,7 +441,7 @@
                     Striving for perfection in every project, ensuring our services always align with global benchmarks and practices.
                   </p>
                   <div class="read-more">
-                    <a href="#">Learn More <i class="bi bi-arrow-right"></i></a>
+                    <a href="{% url 'about' %}">Learn More <i class="bi bi-arrow-right"></i></a>
                   </div>
                 </div>
               </div>
@@ -455,7 +455,7 @@
                     We believe in the strength of collective expertise, fostering a culture of teamwork and partnerships.
                   </p>
                   <div class="read-more">
-                    <a href="#">Learn More <i class="bi bi-arrow-right"></i></a>
+                    <a href="{% url 'about' %}">Learn More <i class="bi bi-arrow-right"></i></a>
                   </div>
                 </div>
               </div>
@@ -464,7 +464,7 @@
           <!-- service card end -->
 
           <div class="mt-30 text-center">
-            <a href="{% url 'about' %}" tabindex="0" class="theme-btn">View All Services</a>
+            <a href="{% url 'services' %}" tabindex="0" class="theme-btn">View All Services</a>
           </div>
         </div>
       </div>
@@ -543,7 +543,7 @@
         </div>
         <!-- process step end -->
         <div class="contact-button">
-          <a href="#" class="theme-btn">Meet With Us</a>
+          <a href="{% url 'contact' %}" class="theme-btn">Meet With Us</a>
         </div>
       </div>
     </div>

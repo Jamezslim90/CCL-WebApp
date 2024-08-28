@@ -149,7 +149,7 @@ STORAGES = {
 }
 API_URL = "https://ccl-6v3u.onrender.com"
 CRONJOBS = [
-    ('*/5 * * * *', 'projects.cron.my_scheduled_job', '>> /cron/django_cron.log 2>&1')
+    ('* * * * *', 'projects.cron.my_scheduled_job', '>> /cron/django_cron.log 2>&1')
 ]
 
 # JAZZMIN_SETTINGS = {
