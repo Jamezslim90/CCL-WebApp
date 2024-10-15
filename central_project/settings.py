@@ -147,10 +147,7 @@ STORAGES = {
         "OPTIONS": helpers.cloudflare.settings.CLOUDFLARE_R2_CONFIG_OPTIONS,
     },
 }
-API_URL = "https://ccl-6v3u.onrender.com"
-CRONJOBS = [
-    ('* * * * *', 'projects.cron.my_scheduled_job', '>> /cron/django_cron.log 2>&1')
-]
+
 
 # JAZZMIN_SETTINGS = {
 
